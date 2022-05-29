@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원관리</title>
+    <script src="script/jquery-1.12.4.js"></script>
+</head>
+<style>
+    @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+    body {font-family: "Noto Sans KR", sans-serif !important;}
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    a{text-decoration: none; color: inherit;}
+    li{list-style: none;}
+    img{border:none;}
+
+    /* 메뉴 */
+    #sideMenu{width: 25%; min-height: 100vh; background: #fff; float: left; border-right: 1px solid #f5f5f5;} 
+
+    /* 햄버거버튼 */
+    .menu-trigger,
+    .menu-trigger span {display: inline-block; box-sizing: border-box}
+    .menu-trigger {position: relative; top: 20px; left: 20px; width: 24px; height: 20px;}
+    .menu-trigger span {position: absolute; left: 0; width: 100%; height: 3px; background-color: #CB2830; border-radius: 3px;}
+    .menu-trigger span:nth-of-type(1) {top: 0;}
+    .menu-trigger span:nth-of-type(2) {top: 8px;}
+    .menu-trigger span:nth-of-type(3) {bottom: 0;}
+
+    .nav{display: flex; flex-direction: column; margin: 0 auto; margin-top: 30px; width: 30px; overflow-x: hidden; text-align: center;}
+    i{padding: 0 20px; text-align: left; color: #CB2830;}
+    .nav li{font-size: 16px; line-height: 48px;}
+    .gnb>li{border-bottom: 1px solid #f5f5f5;}
+    .lnb{display: none;}
+</style>
+<script>
+  $(document).ready(function () {
+      popupClose();
+  });
+  function popup(){
+    $("#popup").show();
+  }
+
+  function popupClose(){
+    $("#popup>#closeBtn").click(function(){
+    $("#popup").hide();
+  })
+  }
+</script>
+<body>
+    <div id="sideMenu">
+        <a class="menu-trigger" href="#">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class=""></span>
+        </a>
+        <nav class="nav">
+          <ul class="gnb">
+            <a href="#"><li>
+                <i class="fa-solid fa-chart-pie"></i>
+                대시보드
+            </li></a>
+            <li><i class="fa-solid fa-chalkboard-user"></i>회원관리
+              <ul class="lnb">
+                <li><i class="fa-solid fa-tablet-screen-button"></i><a href="#">어플 관리</a></li>
+                <li><i class="fa-solid fa-desktop"></i><a href="#">관리자 관리</a></li>
+                <li><i class="fa-solid fa-right-to-bracket"></i><a href="#">푸시 관리</a></li>
+                <li><i class="fa-solid fa-bell"></i><a href="#">알림 관리</a></li>
+              </ul>
+            </li>
+            <li><i class="fa-solid fa-radio"></i>라디오
+                <ul class="lnb">
+                  <li><i class="fa-solid fa-laptop"></i><a href="#">방송국 관리</a></li>
+                  <li><i class="fa-solid fa-podcast"></i><a href="#">방송국 추출</a></li>
+                  <li><i class="fa-solid fa-info"></i><a href="#">공지/FAQ</a></li>
+                  <li><i class="fa-solid fa-envelope-open-text"></i><a href="#">문의/요청</a></li>
+                </ul>
+              </li>
+              <li><i class="fa-solid fa-rectangle-list"></i>사용자게시판
+                <ul class="lnb">
+                  <li><i class="fa-solid fa-id-badge"></i><a href="#">소셜회원 관리</a></li>
+                  <li><i class="fa-solid fa-pen-to-square"></i><a href="#">게시판 관리</a></li>
+                  <li><i class="fa-solid fa-comment-dots"></i><a href="#">댓글 관리</a></li>
+                  <li><i class="fa-solid fa-filter"></i><a href="#">필터링 관리</a></li>
+                  <li><i class="fa-solid fa-file-circle-exclamation"></i><a href="#">게시판신고 관리</a></li>
+                </ul>
+              </li>
+              <li><i class="fa-solid fa-table"></i>편성표
+                <ul class="lnb">
+                  <li><i class="fa-solid fa-calendar-days"></i><a href="#">편성표 관리</a></li>
+                </ul>
+              </li>
+              <li><i class="fa-solid fa-chart-line"></i>통계
+                <ul class="lnb">
+                  <li><i class="fa-solid fa-chart-simple"></i><a href="#">가입자 통계</a></li>
+                  <li><i class="fa-regular fa-clock"></i><a href="#">시간별 통계</a></li>
+                  <li><i class="fa-solid fa-music"></i><a href="#">재생 통계</a></li>
+                  <li><i class="fa-solid fa-key"></i><a href="#">서버 정보</a></li>
+                </ul>
+              </li>
+          </ul>
+        </nav>
+      </div>
+</body>
+</html>
