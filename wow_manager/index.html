@@ -77,10 +77,15 @@
     .th-1{width: 4%;}
     .th-2{width: 15%;}
 
+    /* Pagination */
     .pageBtn{display:block; text-align: center; width: 100%;}
-    .pagination{display: flex; justify-content: flex-end; margin-top: 20px;}
-    .pagination a{display: block; color: var(--color-grey);}
-    .pagination .num{}
+    .pagination{display: flex; justify-content: flex-end; align-items: center; margin-top: 20px;}
+    .pagination a{display: block; width: 100%; color: var(--color-grey);}
+    .pagination li{font-weight: 500;}
+    .pagination .num{width: 30px; height: 30px; color: var(--color-grey); border: 1px solid var(--color-lightgrey); line-height: 28px;}
+    .pagination .num:hover{background: var(--color-grey); color: var(--color-white);}
+    .pagination .prev{height: 30px; padding: 0 15px; background: var(--color-lightGrey); border-radius: 15px 0 0 15px; line-height: 28px;}
+    .pagination .next{height: 30px; padding: 0 15px; background: var(--color-lightGrey); border-radius: 0 15px 15px 0; line-height: 28px;}
 </style>
 <script>
     $(document).ready(function () {
