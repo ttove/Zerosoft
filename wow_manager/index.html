@@ -96,7 +96,11 @@
         document.querySelector(".closeBtn").addEventListener("click", close);
         document.querySelector(".bg").addEventListener("click", close);
         document.querySelector(".closeBtn2").addEventListener("click", close);
-        document.querySelector("table td").addEventListener("click", open);
+
+        var _tr = document.querySelectorAll("table td");
+        [].forEach.call(_tr, function (col) {
+          col.addEventListener("click", open, false);
+        }); 
         
     })
   </script>
