@@ -55,14 +55,16 @@
     .hidden{display: none;}
 
     .modalHead{display: flex; justify-content: space-between; align-items: center; width: 100%; padding-bottom: 20px; border-bottom: 1px solid var(--color-lightGrey);}
-    .closeBtn{display: block;}
-    .modalField{display: flex; flex-wrap:wrap; justify-content: space-between; padding-top: 20px;}
-    .modalField div:not(.checkBox){display: block; width: 48%;}
-    .modalField div label{font-size: 14px; color: var(--color-grey);}
-    .modalField div input:not(.b_ver){margin: 2% 0 4%; padding: 0 2%; width:100%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
+    .closeBtn{display: block; background: none; border: none; font-size: 16px;}
+    .modalField{display: flex; flex-wrap:wrap; justify-content: space-between; padding-top: 20px; border-bottom: 1px solid var(--color-lightGrey);}
+    .modalField div:not(.checkBox){display: grid; width: 48%;}
+    .modalField div label{font-weight: 500; font-size: 14px; color: var(--color-grey);}
+    .modalField div input:not(.num){margin: 2% 0 4%; padding: 0 2%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
     .modalField div select{margin: 2% 0 4%; padding: 2% 0; width: 100%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
-    .checkBox{width: 100%; display: flex; align-items: center;}
-    .b_ver{width: 50px; text-align: center;}
+    .checkBox{margin-bottom:3%; width: 100%; display: flex; align-items: center;}
+    .checkBox label{padding-right: 30px;}
+    .num{margin-right: 30px; width: 50px; line-height: 28px; text-align: center; border: 1px solid #ccc; border-radius: 5px;}
+    .closeBtn2{float: right; margin-top: 20px; padding: 6px 10px; background: var(--color-red); color: var(--color-white); border: none; border-radius: 5px; font-size: 14px;}
 
     /* Table */
     .dataTable{margin-top: 25px; font-size: 12px; text-align: center;}
@@ -76,17 +78,18 @@
 </style>
 <script>
     $(document).ready(function () {
-      const open = () => {
-      document.querySelector(".modal").classList.remove("hidden");
-    }
+        const open = () => {
+            document.querySelector(".modal").classList.remove("hidden");
+        }
   
-    const close = () => {
-      document.querySelector(".modal").classList.add("hidden");
-    }
+        const close = () => {
+            document.querySelector(".modal").classList.add("hidden");
+         }
   
-    document.querySelector(".openBtn").addEventListener("click", open);
-    document.querySelector(".closeBtn").addEventListener("click", close);
-    document.querySelector(".bg").addEventListener("click", close);
+        document.querySelector(".openBtn").addEventListener("click", open);
+        document.querySelector(".closeBtn").addEventListener("click", close);
+        document.querySelector(".bg").addEventListener("click", close);
+        document.querySelector(".closeBtn2").addEventListener("click", close);
     })
   </script>
 <body>
@@ -277,7 +280,7 @@
                                 </div>
                                 <div class="checkBox">
                                     <label for="blockVer">광고차단 버전</label>
-                                    <input type="text" class="b_ver" value="0">
+                                    <input type="text" class="num" value="0">
                         
                                     <label>
                                         <input type="checkbox" id="b_mainBanner" name="b_mainBanner" value="0"> 메인배너차단
@@ -343,7 +346,7 @@
                                     <input type="text" placeholder="줄공지 URL">
                                 </div>
                             </div>
-                            <button class="closeBtn">닫기</button>
+                            <button class="closeBtn2">닫기</button>
                         </div>
                     </div>  
                 </section>
