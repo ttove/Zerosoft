@@ -59,22 +59,28 @@
     .modalField{display: flex; flex-wrap:wrap; justify-content: space-between; padding-top: 20px; border-bottom: 1px solid var(--color-lightGrey);}
     .modalField div:not(.checkBox){display: grid; width: 48%;}
     .modalField div label{font-weight: 500; font-size: 14px; color: var(--color-grey);}
-    .modalField div input:not(.num){margin: 2% 0 4%; padding: 0 2%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
+    .modalField div input:not(.blockNum){margin: 2% 0 4%; padding: 0 2%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
     .modalField div select{margin: 2% 0 4%; padding: 2% 0; width: 100%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
     .checkBox{margin-bottom:3%; width: 100%; display: flex; align-items: center;}
     .checkBox label{padding-right: 30px;}
-    .num{margin-right: 30px; width: 50px; line-height: 28px; text-align: center; border: 1px solid #ccc; border-radius: 5px;}
+    .blockNum{margin-right: 30px; width: 50px; line-height: 28px; text-align: center; border: 1px solid #ccc; border-radius: 5px;}
     .closeBtn2{float: right; margin-top: 20px; padding: 6px 10px; background: var(--color-red); color: var(--color-white); border: none; border-radius: 5px; font-size: 14px;}
 
     /* Table */
     .dataTable{margin-top: 25px; font-size: 12px; text-align: center;}
     table{width: 100%; table-layout:fixed; border: 1px solid var(--color-lightGrey); border-collapse: collapse; cursor: default;}
+    tr:hover td{background: var(--color-lightGrey);}
     th, td {padding: 8px 0; border: 1px solid var(--color-lightGrey);}
     th{background: var(--color-grey); color: var(--color-white); font-weight: 500;}
     td{padding: 0 4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
     .thumbnail{width: 50%;}
     .th-1{width: 4%;}
     .th-2{width: 15%;}
+
+    .pageBtn{display:block; text-align: center; width: 100%;}
+    .pagination{display: flex; justify-content: flex-end; margin-top: 20px;}
+    .pagination a{display: block; color: var(--color-grey);}
+    .pagination .num{}
 </style>
 <script>
     $(document).ready(function () {
@@ -90,6 +96,8 @@
         document.querySelector(".closeBtn").addEventListener("click", close);
         document.querySelector(".bg").addEventListener("click", close);
         document.querySelector(".closeBtn2").addEventListener("click", close);
+        document.querySelector("table td").addEventListener("click", open);
+        
     })
   </script>
 <body>
@@ -280,7 +288,7 @@
                                 </div>
                                 <div class="checkBox">
                                     <label for="blockVer">광고차단 버전</label>
-                                    <input type="text" class="num" value="0">
+                                    <input type="text" class="blockNum" value="0">
                         
                                     <label>
                                         <input type="checkbox" id="b_mainBanner" name="b_mainBanner" value="0"> 메인배너차단
@@ -403,6 +411,14 @@
                         </tr>
                         </thead>
                     </table>
+                    <div class="pageBtn">
+                        <ul class="pagination">
+                            <li><a href="#" class="prev">이전</a></li>
+                            <li><a href="#" class="num">1</a></li>
+                            <li><a href="#" class="num">2</a></li>
+                            <li><a href="#" class="next">다음</a></li>
+                        </ul>
+                    </div>
                 </div>    
             </div>   
         </div>
