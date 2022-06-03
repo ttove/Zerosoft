@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,10 +89,11 @@
 </style>
 <script>
     $(document).ready(function () {
+
         const open = () => {
             document.querySelector(".modal").classList.remove("hidden");
         }
-  
+
         const close = () => {
             document.querySelector(".modal").classList.add("hidden");
          }
@@ -105,8 +106,8 @@
         var _tr = document.querySelectorAll("table td");
         [].forEach.call(_tr, function (col) {
           col.addEventListener("click", open, false);
-        }); 
-        
+        });
+         
     })
   </script>
 <body>
