@@ -62,7 +62,7 @@
     .modalField div input:not(.blockNum){margin: 2% 0 4%; padding: 0 2%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
     .modalField div select{margin: 2% 0 4%; padding: 2% 0; width: 100%; font-size: 14px; line-height: 42px; border: 1px solid #ccc; border-radius: 5px;}
     .checkBox{margin-bottom:3%; width: 100%; display: flex; align-items: center;}
-    .checkBox label{padding-right: 30px;}
+    .checkBox label{padding-right: 20px;}
     .blockNum{margin-right: 30px; width: 50px; line-height: 28px; text-align: center; border: 1px solid #ccc; border-radius: 5px;}
     .closeBtn2{float: right; margin-top: 20px; padding: 6px 10px; background: var(--color-red); color: var(--color-white); border: none; border-radius: 5px; font-size: 14px;}
 
@@ -86,6 +86,17 @@
     .pagination .num:hover{background: var(--color-grey); color: var(--color-white);}
     .pagination .prev{height: 30px; padding: 0 15px; background: var(--color-lightGrey); border-radius: 15px 0 0 15px; line-height: 28px;}
     .pagination .next{height: 30px; padding: 0 15px; background: var(--color-lightGrey); border-radius: 0 15px 15px 0; line-height: 28px;}
+
+    @media ( max-width: 768px ) {
+        /* nav */
+        .nav{display: block; width: 100%;}
+        .gnb{width: 100px}
+
+        /* container */
+        .card{width: 100vh;}
+        section{width: 100%;}
+        section select{width: 150px;}
+    }
 </style>
 <script>
     $(document).ready(function () {
