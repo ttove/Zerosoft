@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Index01</title>
     <!-- Bootstrap.css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -17,15 +17,14 @@
 
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .bg-login-image{background-image: url(http://svc.xmobile.kr/xadmin/img/zerosoft_logo.png); background-repeat: no-repeat; background-position: center;}
-        
+        .bg-login-image{background-image: url(http://svc.xmobile.kr/xadmin/img/zerosoft_logo.png); background-repeat: no-repeat; background-position: center; background-size: cover;}
     </style>
 
   </head>
-  <body>
+  <body class="bg-light bg-gradient">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="row my-5 border border-1 rounded">
+                <div class="row w-75 my-5 shadow rounded-3 p-0">
                     <div class="col-6 bg-white bg-login-image"></div>
                     <div class="col-6 bg-white">
                         <div class="p-5">
@@ -43,9 +42,9 @@
                                          </div>
                                          <div class="form-floating">
                                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                            <label for="floatingInput">Password</label>
+                                            <label for="floatingPassword">Password</label>
                                          </div>
-                                         <a href="#" class="col-12 btn btn-primary mt-3">Login</a>
+                                         <a href="#" class="col-12 btn btn-secondary py-2 mt-3" role="button">Login</a>
                                     </from>
                                 </div>
                             </div>
