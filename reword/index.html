@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,34 +19,40 @@
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
-         $(document).ready(function () {
-            var check_password = function () {
-                if ($("#inputPassword").val().length == 0) {
-                    $('input[type="button"]').prop('disabled', true);
-                }
-                else if ($("#inputPassword").val().length < 4) {
-                    $("#error").html("<p style='color:red'>최소 10자 이상의 비밀번호를 입력해주세요</p>");
-                    $('input[type="button"]').prop('disabled', true);
-                }
-                else if ($("#inputPassword").val() != $("#inputPasswordNew").val()) {
-                    $("#error").html("<p style='color:red'>비밀번호가 일치하지 않습니다</p>");
-                    $('input[type="button"]').prop('disabled', true);
-                }
-                else {
-                    $("#error").html("<p></p>");
-                    $('input[type="button"]').prop('disabled', false);
-                }
+        $(document).ready(function(){
+            
+            function chkPW() {
+            var pw = $("#inputPassword").val();
+            var pw2 = $("#inputPasswordNew").val();
+
+            if (pw.length == 0) {
+                $('input[type="button"]').prop('disabled', true);
+            }
+            else if (pw.length < 4 || pw.length > 16) {
+                $("#error").html("<p style='color:red'>4 ~ 16자 이내로 작성해 주세요!</p>");
+                $('input[type="button"]').prop('disabled', true);
+            }
+            else if (pw != pw2) {
+                $("#error").html("<p style='color:red'>비밀번호가 일치하지 않습니다</p>");
+                $('input[type="button"]').prop('disabled', true);
+            }
+            else {
+                $("#error").html("<p></p>");
+                $('input[type="button"]').prop('disabled', false);
             };
+        };
+
             $('input[type="button"]').prop('disabled', true);
             $("#inputPassword").on('keyup', function () {
-                check_password()
+                chkPW()
             });
             $("#inputPasswordNew").on('keyup', function () {
-                check_password()
+                chkPW()
             });
-        });
 
+        });
     </script>
+
 </head>
 
 <body>
@@ -56,27 +62,22 @@
         <main class="p-5">
             <form method="post" action="">
                 <div class="mb-4 password">
-                    <label for="inputPassword" class="form-label fw-bolder">새로운 비밀번호</label>
-                    <input type="password" class="form-control" name="inputPassword" id="inputPassword" aria-describedby="passwordHelpBlock"  minlength="4" maxlength="16">
+                    <label for="inputPassword" class="form-label fw-bolder">새 비밀번호</label>
+                    <input type="password" class="form-control" name="inputPassword" id="inputPassword"
+                        aria-describedby="passwordHelpBlock" minlength="4" maxlength="16">
                 </div>
                 <div class="mb-2 passwordCheck">
-                    <label for="inputPasswordNew" class="form-label fw-bolder">새로운 비밀번호 확인</label>
-                    <input type="password" class="form-control" name="inputPasswordNew" id="inputPasswordNew" aria-describedby="passwordHelpBlock" minlength="4" maxlength="16">
-                    <input type="hidden" name="data" id="data" >
+                    <label for="inputPasswordNew" class="form-label fw-bolder">새 비밀번호 확인</label>
+                    <input type="password" class="form-control" name="inputPasswordNew" id="inputPasswordNew"
+                        aria-describedby="passwordHelpBlock" minlength="4" maxlength="16">
+                    <input type="hidden" name="data" id="data">
                 </div>
                 <p id="error"></p>
                 <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
-                    <input class="btn btn-primary px-4" type="button" data-inline="true" value="변경하기">
+                    <input class="btn btn-primary px-4" type="button" data-inline="true" value="변경하기" onclick="chkPW()">
                 </div>
             </form>
         </main>
     </div>
-
-    <!-- Bootstrap.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
-    <script src="script/script.js"></script>
-</body>
 
 </html>
