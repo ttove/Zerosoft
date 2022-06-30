@@ -25,14 +25,19 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
     <style>
-        .bg-image{width: 200px; height: 200px; background-image: url(http://svc.xmobile.kr/xadmin/img/zerosoft_logo.png); background-repeat: no-repeat; background-position: center; background-size: cover;}
+        .bg-image{background-image: url(images/sky.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;}
+        .logo-image{width: 180px; height: 180px; background: #fff; background-image: url(http://svc.xmobile.kr/xadmin/img/zerosoft_logo.png); background-repeat: no-repeat; background-position: center; background-size: cover;}
     </style>
 
 </head>
 
 <body>
-    <div class="b-example-divider">
-        <div class="bg-image my-5 m-auto border border-secondary rounded"></div>
+    <!-- <div class="cover-container">
+        <div class="bg-image my-5 m-auto rounded"></div>
+        <p class="position-absolute bottom-0 start-50 translate-middle-x mb-5">[서비스 간단설명]</p>
+    </div> -->
+    <div class="bg-image" style="min-height: 100vh;">
+        <div class="logo-image mt-5 m-auto rounded position-absolute top-0 start-50 translate-middle-x"></div>
         <p class="position-absolute bottom-0 start-50 translate-middle-x mb-5">[서비스 간단설명]</p>
     </div>
 
