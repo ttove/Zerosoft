@@ -24,14 +24,28 @@
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
-            $(document).ready(function(){
+        $(document).ready(function () {
             $("#modalChoice").modal('show');
-            });
+        });
     </script>
 
     <style>
-        .bg-image{background-image: url(images/sky.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;}
-        .logo-image{width: 180px; height: 180px; background: #ffffff; background-image: url(http://svc.xmobile.kr/xadmin/img/zerosoft_logo.png); background-repeat: no-repeat; background-position: center; background-size: cover;}
+        .bg-image {
+            background-image: url(images/sky.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .logo-image {
+            width: 180px;
+            height: 180px;
+            background: #ffffff;
+            background-image: url(http://svc.xmobile.kr/xadmin/img/zerosoft_logo.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
     </style>
 
 </head>
@@ -46,8 +60,8 @@
         <p class="position-absolute bottom-0 start-50 translate-middle-x mb-5">[서비스 간단설명]</p>
     </div>
 
-    <div class="modal modal-alert bg-secondary py-5" tabindex="-1" role="dialog"
-        id="modalChoice" style="--bs-bg-opacity: .5; min-height: 100vh;">
+    <div class="modal modal-alert bg-secondary py-5" tabindex="-1" role="dialog" id="modalChoice"
+        style="--bs-bg-opacity: .5; min-height: 100vh;">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content rounded-4 shadow">
                 <div class="modal-body p-4 text-center">
